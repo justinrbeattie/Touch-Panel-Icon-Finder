@@ -1,6 +1,10 @@
 :host {
+  height:auto;
   mat-toolbar {
+    position:sticky;
+    top:0;
     gap:1rem;
+    z-index:99;
     .spacer {
       flex: 1 1 auto;
     }

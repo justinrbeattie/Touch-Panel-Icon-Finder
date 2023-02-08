@@ -1,0 +1,20 @@
+
+<ng-container *ngFor="let font of iconFontList; let fontIndex = index;">
+  <div *ngIf="font.filteredIconList.length > 0" class="font-item">
+    <h4       (click)="copyFontName(font)">{{font.title | titlecase}}</h4>
+    <div class="icon-list">
+      <div *ngFor="let icon of font.filteredIconList; let iconIndex = index;" class="icon-card mat-elevation-z1"
+      (click)="copyIconId(icon)"
+      >
+        <div class="card-title">
+          <h6>{{icon.title | titlecase}}</h6>
+        </div>
+        <span class="icon" [ngStyle]="{'font-family': font.name}" [innerHTML]="icon.unicode"></span>
+        <div class="card-footer">
+          <span>{{icon.unicode}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
